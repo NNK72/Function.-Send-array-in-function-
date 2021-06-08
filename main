@@ -1,6 +1,39 @@
 #include <iostream>
 using namespace std;
+void calc (int*data1, int*data2){
+    int dayYar1=0,dayYar2=0;
+    for (int i=1; i<=data1[2]; i++){    if(i%4 ==0) dayYar1+=366; else dayYar1+=365;    }
+    for (int i=1; i<=data2[2]; i++){    if(i%4 ==0) dayYar2+=366; else dayYar2+=365;    }
+    
+    for (int i=1; i<=data1[1]; i++){    if(i==(1||3||5||7||8||10||12)) dayYar1+=31; 
+                                        else if(i==(4||6||9||11))dayYar1+=30; 
+                                        else if(i==(2)){if (visocos(data1)) dayYar1+=29; else dayYar1+=28;} }
+
+    for (int i=1; i<=data2[1]; i++){    if(i==(1||3||5||7||8||10||12)) dayYar2+=31; 
+                                        else if(i==(4||6||9||11))dayYar2+=30; 
+                                        else if(i==(2)){if (visocos(data2)) day+=29; else dayYar2+=28;} }
+
+
+   dayYar1+=data1[0];
+   dayYar2+=data2[0];   
+    
+    
+    cout<<"day1="<<dayYar1<<endl;
+    cout<<"day2="<<dayYar2<<endl;
+
+};
+
+ int visocos(int*data){
+    if(data[2]%4 ==0) return 1;
+    else return 0;
+};
 
 int main(){
+int* data1=new int[3]{12,5,2020};
+int* data2=new int[3]{10,4,2021};
+cout<<"data1 year high = "<<(visocos(data1)?"yes":"no")<<endl;
+cout<<"data2 year high = "<<(visocos(data2)?"yes":"no")<<endl;
+calc(data1,data2);
 
+system ("Pause");return 0;
 };
